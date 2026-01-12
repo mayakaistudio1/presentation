@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -17,50 +18,209 @@ font-family:'Inter',sans-serif;
 -webkit-print-color-adjust:exact;
 print-color-adjust:exact;
 }
+
+/* === PREMIUM MOBILE DECK UPLIFT v2 (hierarchy + contrast) === */
+html{
+-webkit-text-size-adjust:100%;
+text-size-adjust:100%;
+}
+body{
+background-color:#0b0b0f;
+color:#111114;
+-webkit-font-smoothing:antialiased;
+-moz-osx-font-smoothing:grayscale;
+text-rendering:optimizeLegibility;
+padding-left:max(12px, env(safe-area-inset-left));
+padding-right:max(12px, env(safe-area-inset-right));
+padding-top:max(12px, env(safe-area-inset-top));
+padding-bottom:max(12px, env(safe-area-inset-bottom));
+scroll-snap-type:y mandatory;
+}
+
+/* Card-like pages */
 .page{
 width:100%;
-max-width:600px;
+max-width:420px;
 height:auto;
 min-height:100vh;
 background-color:#fff;
-margin:10px auto;
+margin:14px auto;
 position:relative;
 overflow:hidden;
 display:flex;
 flex-direction:column;
 box-sizing:border-box;
+border-radius:28px;
+box-shadow:
+0 18px 50px rgba(0,0,0,0.42),
+0 2px 0 rgba(255,255,255,0.06) inset;
+scroll-snap-align:start;
+scroll-snap-stop:always;
+transform:translateZ(0);
 }
+
+/* Slightly wider on larger phones */
+@media (min-width:480px){
+.page{max-width:520px;margin:18px auto;border-radius:32px;}
+}
+@media (min-width:768px){
+.page{max-width:600px;margin:22px auto;}
+}
+
+/* --- Typography hierarchy (global, no HTML changes) --- */
+.page h1,
+.page h2,
+.page h3{
+letter-spacing:-0.022em;
+color:#111114;
+}
+.page h1{
+line-height:1.06;
+}
+.page h2{
+line-height:1.10;
+}
+.page h3{
+line-height:1.12;
+}
+.page p{
+line-height:1.52;
+}
+
+/* Make “subtitles” and body copy less dull across slides */
+.page .text-\[\#86868b\],
+.page .text-\[\#86868B\],
+.page .text-\[\#8E8E93\]{
+color:rgba(60,60,67,0.72) !important;
+}
+.page .text-\[\#8E8E93\]\/40{
+color:rgba(60,60,67,0.44) !important;
+}
+.page .text-\[\#8E8E93\]\/40 .bg-current{
+background-color:rgba(60,60,67,0.34) !important;
+}
+
+/* Tailwind gray text often used for secondary copy */
+.page .text-gray-400{ color:rgba(60,60,67,0.68) !important; }
+.page .text-gray-300{ color:rgba(60,60,67,0.42) !important; }
+.page .text-gray-600{ color:rgba(44,44,46,0.78) !important; }
+
+/* Improve emphasis where it already exists */
+.page em,
+.page i{
+color:#111114;
+font-style:italic;
+}
+.page .italic{
+text-shadow:0 0 0.01px rgba(0,0,0,0.25);
+}
+.page .text-\[\#FF3B30\]{
+filter:saturate(0.98);
+}
+.page .text-\[\#0071E3\],
+.page .bg-\[\#0071E3\]{
+filter:saturate(0.98);
+}
+
+/* Divider/line clarity */
+.page .bg-\[\#E5E5E7\]{ background-color:rgba(60,60,67,0.14) !important; }
+.page .bg-\[\#D2D2D7\]{ background-color:rgba(60,60,67,0.18) !important; }
+.page .border-gray-100\/50{ border-color:rgba(60,60,67,0.10) !important; }
+.page .border-gray-200{ border-color:rgba(60,60,67,0.16) !important; }
+.page .border-gray-50{ border-color:rgba(60,60,67,0.08) !important; }
+.page .border-\[\#F2F2F7\]{ border-color:rgba(60,60,67,0.10) !important; }
+
+/* Cards feel crisper but still calm */
+.page .shadow-lg{
+box-shadow:0 16px 34px rgba(0,0,0,0.10) !important;
+}
+.page .shadow-xl{
+box-shadow:0 22px 48px rgba(0,0,0,0.18) !important;
+}
+.page .shadow-sm{
+box-shadow:0 10px 22px rgba(0,0,0,0.08) !important;
+}
+
+/* Slightly stronger “primary” black blocks on light backgrounds */
+.page .text-black{ color:#0f0f12 !important; }
+.page .bg-\[\#1d1d1f\]{ background-color:#101013 !important; }
+
+/* Footer small text: readable but secondary */
+.page .text-\[10px\],
+.page .text-\[9px\]{
+letter-spacing:0.14em;
+}
+
+/* Interaction polish */
+.page *{ -webkit-tap-highlight-color:transparent; }
+.page button{
+transition:transform 180ms ease, box-shadow 220ms ease, filter 220ms ease;
+}
+.page button:hover{
+box-shadow:0 18px 44px rgba(0,0,0,0.22) !important;
+}
+.page button:active{
+transform:translateY(1px) scale(0.995);
+filter:brightness(0.985);
+}
+
+/* Print stays clean */
 @media print{
-body{background-color:#fff;}
-.page{margin:0;width:100%;min-height:100vh;page-break-after:always;padding:20px;}
+body{background-color:#fff; padding:0;}
+.page{
+margin:0;
+width:100%;
+min-height:100vh;
+page-break-after:always;
+padding:20px;
+border-radius:0;
+box-shadow:none;
 }
+}
+
+/* Calm motion */
 @keyframes pulse-wave {
-0% { transform: scale(1); opacity: 0.8; }
-50% { transform: scale(1.05); opacity: 0.5; }
-100% { transform: scale(1); opacity: 0.8; }
+0% { transform: scale(1); opacity: 0.75; }
+50% { transform: scale(1.03); opacity: 0.55; }
+100% { transform: scale(1); opacity: 0.75; }
 }
 @keyframes float-glow {
-0%, 100% { box-shadow: 0 0 20px rgba(0, 113, 227, 0.3); }
-50% { box-shadow: 0 0 40px rgba(0, 113, 227, 0.6); }
+0%, 100% { box-shadow: 0 0 18px rgba(0, 113, 227, 0.22); }
+50% { box-shadow: 0 0 34px rgba(0, 113, 227, 0.40); }
 }
-.logo-pulse {
-animation: pulse-wave 2s ease-in-out infinite;
-}
-.logo-container {
-animation: float-glow 3s ease-in-out infinite;
+.logo-pulse{ animation:pulse-wave 2.6s ease-in-out infinite; }
+.logo-container{ animation:float-glow 3.6s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce){
+.logo-pulse,.logo-container{ animation:none !important; }
 }
 </style>
-</head>
+```
+
+<
+  
+  /* Visual enhancements - accent & gradient */
+.text-accent {
+  font-weight: 700;
+  color: #0066ff;
+}
+
+.text-gradient {
+  background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 800;
+}
+
+.bg-alert {
+  background-color: #fff3cd;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 600;
+  color: #856404;
+}/head>
 <body>
 
-  /* Visual Enhancement Classes */
-.text-accent { color: #0071E3; font-weight: 600; }
-.text-gradient { background: linear-gradient(135deg, #0071E3 0%, #00D4FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-.text-bold { font-weight: 700 !important; }
-.text-highlight { background: linear-gradient(120deg, rgba(0,113,227,0.1) 0%, rgba(0,113,227,0.15) 100%); padding: 2px 6px; border-radius: 4px; }
-.shadow-glow { box-shadow: 0 0 30px rgba(0,113,227,0.25); }
-.text-huge { font-size: 1.3em; font-weight: 800; }
-.bg-alert { background: linear-gradient(135deg, #FF3B30 0%, #FF6B60 100%); color: white; padding: 12px 16px; border-radius: 12px; font-weight: 600; }
 <!-- Slide 1: Intro (NO CTA) -->
 <div class="page bg-[#F2F2F7]">
 <div class="w-full h-full flex flex-col items-center justify-between py-12 px-4 sm:px-6 sm:py-16 relative overflow-hidden">
@@ -69,10 +229,10 @@ animation: float-glow 3s ease-in-out infinite;
 WOW-<br/>Agent
 </h1>
 <p class="text-base sm:text-lg font-medium text-[#86868b] tracking-tight leading-snug">
-Один «цифровой сотрудник», который разговаривает вместо вас — 24/7
+Один «цифровой сотрудник», который разговаривает вместо вас — <span class="text-accent">24/7</span>
 </p>
 <p class="text-xs sm:text-sm text-[#86868b] font-light tracking-tight leading-snug">
-Сайт / лендинг / mini-app перестаёт быть контентом — становится живым разговором.
+Сайт / лендинг / mini-app перестаёт быть контентом — становится <span class="text-accent">живым разговором</span>.
 </p>
 </div>
 
@@ -186,7 +346,7 @@ WOW-<br/>Agent
 <div class="flex items-center gap-2 sm:gap-4 text-[#8E8E93]/40">
 <div class="flex-1 h-[0.5px] bg-current"></div>
 <div class="text-[10px] sm:text-xs tracking-wider font-light uppercase text-center max-w-sm">
-Нет диалогов → нет доверия → нет заявок
+Нет диалогов → нет доверия → <span class="bg-alert">НЕТ ЗАЯВОК</span>
 </div>
 <div class="flex-1 h-[0.5px] bg-current"></div>
 </div>
@@ -203,7 +363,7 @@ WOW-<br/>Agent
 <main class="flex flex-col items-center justify-center flex-grow py-6 sm:py-12">
 <div class="text-center mb-10 sm:mb-16">
 <h1 class="text-2xl sm:text-3xl font-light leading-tight tracking-tight mb-3 sm:mb-4 text-[#1D1D1F]">
-Как человек. <br/>Только <span class="text-bold">стабильно</span>.
+Как <span class="text-accent">человек</span>. <br/>Только <span class="text-accent">стабильно</span>.
 </h1>
 <p class="text-sm sm:text-base font-light text-[#86868B] tracking-wide">
 Закрывает тишину между касаниями и ведёт к шагу.
