@@ -53,6 +53,14 @@ animation: float-glow 3s ease-in-out infinite;
 </head>
 <body>
 
+  /* Visual Enhancement Classes */
+.text-accent { color: #0071E3; font-weight: 600; }
+.text-gradient { background: linear-gradient(135deg, #0071E3 0%, #00D4FF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+.text-bold { font-weight: 700 !important; }
+.text-highlight { background: linear-gradient(120deg, rgba(0,113,227,0.1) 0%, rgba(0,113,227,0.15) 100%); padding: 2px 6px; border-radius: 4px; }
+.shadow-glow { box-shadow: 0 0 30px rgba(0,113,227,0.25); }
+.text-huge { font-size: 1.3em; font-weight: 800; }
+.bg-alert { background: linear-gradient(135deg, #FF3B30 0%, #FF6B60 100%); color: white; padding: 12px 16px; border-radius: 12px; font-weight: 600; }
 <!-- Slide 1: Intro (NO CTA) -->
 <div class="page bg-[#F2F2F7]">
 <div class="w-full h-full flex flex-col items-center justify-between py-12 px-4 sm:px-6 sm:py-16 relative overflow-hidden">
@@ -195,7 +203,7 @@ WOW-<br/>Agent
 <main class="flex flex-col items-center justify-center flex-grow py-6 sm:py-12">
 <div class="text-center mb-10 sm:mb-16">
 <h1 class="text-2xl sm:text-3xl font-light leading-tight tracking-tight mb-3 sm:mb-4 text-[#1D1D1F]">
-Как человек. <br/>Только стабильно.
+Как человек. <br/>Только <span class="text-bold">стабильно</span>.
 </h1>
 <p class="text-sm sm:text-base font-light text-[#86868B] tracking-wide">
 Закрывает тишину между касаниями и ведёт к шагу.
