@@ -1,0 +1,596 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>WOW-Agent — Presentation Deck (Mobile)</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+<style>
+body{
+margin:0;
+padding:0;
+background-color:#333;
+font-family:'Inter',sans-serif;
+-webkit-print-color-adjust:exact;
+print-color-adjust:exact;
+}
+.page{
+width:100%;
+max-width:600px;
+height:auto;
+min-height:100vh;
+background-color:#fff;
+margin:10px auto;
+position:relative;
+overflow:hidden;
+display:flex;
+flex-direction:column;
+box-sizing:border-box;
+}
+@media print{
+body{background-color:#fff;}
+.page{margin:0;width:100%;min-height:100vh;page-break-after:always;padding:20px;}
+}
+@keyframes pulse-wave {
+0% { transform: scale(1); opacity: 0.8; }
+50% { transform: scale(1.05); opacity: 0.5; }
+100% { transform: scale(1); opacity: 0.8; }
+}
+@keyframes float-glow {
+0%, 100% { box-shadow: 0 0 20px rgba(0, 113, 227, 0.3); }
+50% { box-shadow: 0 0 40px rgba(0, 113, 227, 0.6); }
+}
+.logo-pulse {
+animation: pulse-wave 2s ease-in-out infinite;
+}
+.logo-container {
+animation: float-glow 3s ease-in-out infinite;
+}
+</style>
+</head>
+<body>
+
+<!-- Slide 1: Intro (NO CTA) -->
+<div class="page bg-[#F2F2F7]">
+<div class="w-full h-full flex flex-col items-center justify-between py-12 px-4 sm:px-6 sm:py-16 relative overflow-hidden">
+<div class="w-full text-center space-y-4 z-20">
+<h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tighter text-[#1d1d1f] leading-tight">
+WOW-<br/>Agent
+</h1>
+<p class="text-base sm:text-lg font-medium text-[#86868b] tracking-tight leading-snug">
+Один «цифровой сотрудник», который разговаривает вместо вас — 24/7
+</p>
+<p class="text-xs sm:text-sm text-[#86868b] font-light tracking-tight leading-snug">
+Сайт / лендинг / mini-app перестаёт быть контентом — становится живым разговором.
+</p>
+</div>
+
+<div class="relative w-full flex items-center justify-center my-6 sm:my-8">
+<div class="absolute w-40 h-40 sm:w-56 sm:h-56 bg-blue-50 rounded-full blur-3xl opacity-50 -z-10"></div>
+<div class="absolute w-32 h-32 sm:w-48 sm:h-48 bg-purple-50 rounded-full blur-3xl opacity-30 translate-x-8 sm:translate-x-12 -z-10"></div>
+
+<!-- IMPROVED LOGO: Live Communication Effect -->
+<div class="logo-container w-48 h-48 sm:w-56 sm:h-56 rounded-full flex items-center justify-center relative" style="background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.15)); backdrop-filter: blur(25px); border: 2px solid rgba(0, 113, 227, 0.3); box-shadow: 0 40px 80px rgba(0,0,0,0.08), inset 0 0 40px rgba(255,255,255,0.7), 0 0 60px rgba(0, 113, 227, 0.15);">
+
+<!-- Animated inner ring -->
+<div class="absolute inset-2 rounded-full border border-[#0071E3]/20 logo-pulse"></div>
+
+<!-- Animated dots suggesting communication waves -->
+<div class="absolute w-32 h-32 sm:w-40 sm:h-40">
+<div class="absolute top-0 left-1/2 w-2 h-2 sm:w-3 sm:h-3 bg-[#0071E3] rounded-full -translate-x-1/2 animate-pulse" style="animation-delay: 0s;"></div>
+<div class="absolute bottom-0 left-1/4 w-2 h-2 sm:w-3 sm:h-3 bg-[#0071E3] rounded-full animate-pulse" style="animation-delay: 0.3s;"></div>
+<div class="absolute bottom-0 right-1/4 w-2 h-2 sm:w-3 sm:h-3 bg-[#0071E3] rounded-full animate-pulse" style="animation-delay: 0.6s;"></div>
+</div>
+
+<!-- Center icon - chat bubble with live indicator -->
+<div class="relative flex items-center justify-center">
+<div class="absolute w-10 h-10 sm:w-12 sm:h-12 bg-[#0071E3]/10 rounded-xl"></div>
+<span class="material-symbols-outlined text-3xl sm:text-4xl text-[#0071E3] font-light relative z-10">forum</span>
+<div class="absolute bottom-1 right-2 w-2 h-2 sm:w-2.5 sm:h-2.5 bg-green-500 rounded-full animate-pulse shadow-lg"></div>
+</div>
+
+<!-- Highlight shine effect -->
+<div class="absolute top-6 left-8 sm:top-8 sm:left-10 w-8 h-4 sm:w-10 sm:h-5 bg-white/60 blur-md rounded-full opacity-60"></div>
+</div>
+</div>
+
+<div class="w-full flex flex-col items-center gap-4 z-20">
+<div class="flex flex-col items-center gap-2">
+<span class="text-[9px] sm:text-[10px] font-bold tracking-[0.2em] text-[#1d1d1f]/20 uppercase">WOW-AGENT • 2026</span>
+<div class="flex gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-[#1d1d1f]"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-[#f5f5f7] border border-gray-300"></div>
+<div class="w-1.5 h-1.5 rounded-full bg-[#f5f5f7] border border-gray-300"></div>
+</div>
+</div>
+</div>
+
+<div class="absolute top-0 right-0 w-24 h-24 sm:w-32 sm:h-32 bg-[#f5f5f7]/30 rounded-bl-[80px] -z-10"></div>
+</div>
+</div>
+
+<!-- Slide 2: Silent Gap (Pain) -->
+<div class="page bg-white p-4 sm:p-6 pt-8 sm:pt-10 pb-8 sm:pb-12">
+<header class="flex items-center justify-between w-full mb-8 sm:mb-12">
+<div class="text-xs sm:text-sm font-semibold tracking-tight uppercase text-[#1d1d1f]">WOW-Agent</div>
+<div class="text-xs sm:text-sm text-[#8E8E93] font-light tracking-widest uppercase">02</div>
+</header>
+
+<main class="flex-1 flex flex-col">
+<div class="mb-8 sm:mb-12">
+<div class="h-[1px] w-10 bg-[#FF3B30] mb-3 sm:mb-4"></div>
+<h1 class="text-3xl sm:text-4xl md:text-5xl font-light leading-tight tracking-tight text-black">
+Тишина <br/>
+<span class="text-[#FF3B30] italic font-normal">между</span> <br/>
+касаниями
+</h1>
+<p class="mt-4 sm:mt-6 text-sm sm:text-base text-[#8E8E93] font-light leading-relaxed max-w-full">
+Бизнес теряет деньги там, где у клиента появляются вопросы — и он остаётся один.
+</p>
+</div>
+
+<div class="flex flex-col gap-5 sm:gap-8">
+<div class="flex flex-col">
+<div class="h-[1px] w-8 bg-[#FF3B30] mb-2 sm:mb-3"></div>
+<div class="flex items-start gap-3 sm:gap-4">
+<span class="material-symbols-outlined text-[#FF3B30] text-2xl sm:text-3xl font-light flex-shrink-0">person_off</span>
+<div>
+<h3 class="text-xs sm:text-sm uppercase tracking-widest font-semibold mb-1 text-[#FF3B30]">Срыв</h3>
+<p class="text-base sm:text-lg font-light leading-snug tracking-tight text-[#1D1D1F]">
+Человек зашёл, не понял — <br/>и ушёл навсегда
+</p>
+</div>
+</div>
+</div>
+
+<div class="flex flex-col">
+<div class="h-[1px] w-8 bg-[#FF3B30] opacity-60 mb-2 sm:mb-3"></div>
+<div class="flex items-start gap-3 sm:gap-4">
+<span class="material-symbols-outlined text-[#FF3B30] text-2xl sm:text-3xl font-light flex-shrink-0">notifications_paused</span>
+<div>
+<h3 class="text-xs sm:text-sm uppercase tracking-widest font-semibold mb-1 text-[#FF3B30]">Забытьё</h3>
+<p class="text-base sm:text-lg font-light leading-snug tracking-tight text-[#1D1D1F]">
+Был интерес — но нет догрева <br/>после первого касания
+</p>
+</div>
+</div>
+</div>
+
+<div class="flex flex-col">
+<div class="h-[1px] w-8 bg-[#FF3B30] opacity-30 mb-2 sm:mb-3"></div>
+<div class="flex items-start gap-3 sm:gap-4">
+<span class="material-symbols-outlined text-[#FF3B30] text-2xl sm:text-3xl font-light flex-shrink-0">psychology_alt</span>
+<div>
+<h3 class="text-xs sm:text-sm uppercase tracking-widest font-semibold mb-1 text-[#FF3B30]">Рутина</h3>
+<p class="text-base sm:text-lg font-light leading-snug tracking-tight text-[#1D1D1F]">
+Команда отвечает одно и то же <br/>и выгорает
+</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<footer class="mt-auto pt-4">
+<div class="flex items-center gap-2 sm:gap-4 text-[#8E8E93]/40">
+<div class="flex-1 h-[0.5px] bg-current"></div>
+<div class="text-[10px] sm:text-xs tracking-wider font-light uppercase text-center max-w-sm">
+Нет диалогов → нет доверия → нет заявок
+</div>
+<div class="flex-1 h-[0.5px] bg-current"></div>
+</div>
+</footer>
+</div>
+
+<!-- Slide 3: Solution Flow -->
+<div class="page bg-white px-4 sm:px-6 py-8 sm:py-12">
+<header class="flex justify-between items-center w-full mb-6 sm:mb-8">
+<div class="text-xs sm:text-sm tracking-widest uppercase font-medium text-[#86868B]">Решение</div>
+<div class="text-xs sm:text-sm font-semibold tracking-tight text-[#1D1D1F]">WOW-Agent</div>
+</header>
+
+<main class="flex flex-col items-center justify-center flex-grow py-6 sm:py-12">
+<div class="text-center mb-10 sm:mb-16">
+<h1 class="text-2xl sm:text-3xl font-light leading-tight tracking-tight mb-3 sm:mb-4 text-[#1D1D1F]">
+Как человек. <br/>Только стабильно.
+</h1>
+<p class="text-xs sm:text-sm font-light text-[#86868B] tracking-wide">
+Закрывает тишину между касаниями и ведёт к шагу.
+</p>
+</div>
+
+<div class="flex flex-col items-center w-full">
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 bg-[#1D1D1F] rounded-full z-10"></div>
+<span class="mt-2 text-xs font-light tracking-widest uppercase text-[#86868B]">Вопрос</span>
+</div>
+
+<div class="w-[1px] bg-[#E5E5E7] h-6 sm:h-8 my-2 sm:my-3"></div>
+
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 bg-[#1D1D1F] rounded-full z-10"></div>
+<span class="mt-2 text-xs font-light tracking-widest uppercase text-[#86868B] text-center">Понимание</span>
+</div>
+
+<div class="w-[1px] bg-[#E5E5E7] h-6 sm:h-8 my-2 sm:my-3"></div>
+
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 bg-[#1D1D1F] rounded-full z-10"></div>
+<span class="mt-2 text-xs font-light tracking-widest uppercase text-[#86868B]">Доверие</span>
+</div>
+
+<div class="w-[1px] bg-[#E5E5E7] h-6 sm:h-8 my-2 sm:my-3"></div>
+
+<div class="flex flex-col items-center">
+<div class="w-2 h-2 bg-[#1D1D1F] rounded-full z-10"></div>
+<span class="mt-2 text-xs font-light tracking-widest uppercase text-[#86868B]">Шаг</span>
+</div>
+</div>
+
+<div class="text-center mt-8 sm:mt-12 max-w-xs sm:max-w-sm">
+<p class="text-xs sm:text-sm font-light leading-relaxed text-[#86868B]">
+Диалог выстроен так, чтобы удержать внимание и довести до действия: заявка / регистрация / Zoom / покупка.
+</p>
+</div>
+</main>
+
+<footer class="flex justify-between items-end w-full">
+<div class="flex flex-col gap-1">
+<div class="w-4 h-[1px] bg-[#D2D2D7]"></div>
+<span class="text-xs tracking-wider uppercase text-[#86868B]">03</span>
+</div>
+<div class="flex items-center gap-2 text-[#86868B]/40">
+<span class="text-[9px] sm:text-xs tracking-widest uppercase">Clarity → Connection → Step</span>
+</div>
+</footer>
+</div>
+
+<!-- Slide 4: Not a chatbot -->
+<div class="page bg-[#F5F5F7] p-3 sm:p-4">
+<header class="pt-8 sm:pt-10 px-4 sm:px-6 pb-4 sm:pb-6">
+<p class="text-xs sm:text-sm font-bold tracking-widest text-[#0071E3] uppercase mb-2">Killer Feature</p>
+<h1 class="text-2xl sm:text-3xl font-bold leading-tight tracking-tight text-[#1d1d1f]">
+Это не чат-бот.<br/>Это живой диалог.
+</h1>
+</header>
+
+<main class="flex-1 px-3 sm:px-4 pb-6 sm:pb-8 flex flex-col gap-3 sm:gap-4">
+<div class="flex-1 bg-white rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col justify-between border border-gray-100/50 shadow-lg">
+<div>
+<span class="text-[10px] sm:text-xs font-semibold text-gray-400 uppercase tracking-widest mb-2 block">Старый подход</span>
+<h2 class="text-xl sm:text-2xl font-bold text-gray-400 tracking-tight leading-none">Legacy Bots</h2>
+</div>
+<ul class="space-y-2 sm:space-y-3">
+<li class="flex items-center gap-2 sm:gap-3">
+<span class="material-symbols-outlined text-gray-300 text-lg sm:text-2xl flex-shrink-0">block</span>
+<p class="text-sm sm:text-base text-gray-400 font-medium">Жёсткие скрипты</p>
+</li>
+<li class="flex items-center gap-2 sm:gap-3">
+<span class="material-symbols-outlined text-gray-300 text-lg sm:text-2xl flex-shrink-0">linear_scale</span>
+<p class="text-sm sm:text-base text-gray-400 font-medium">Линейная логика</p>
+</li>
+<li class="flex items-center gap-2 sm:gap-3">
+<span class="material-symbols-outlined text-gray-300 text-lg sm:text-2xl flex-shrink-0">call_split</span>
+<p class="text-sm sm:text-base text-gray-400 font-medium">Тупики диалога</p>
+</li>
+</ul>
+</div>
+
+<div class="flex-1 bg-[#1d1d1f] rounded-2xl sm:rounded-3xl p-5 sm:p-8 flex flex-col justify-between shadow-xl relative overflow-hidden">
+<div class="absolute -top-20 -right-20 w-40 h-40 bg-[#0071E3]/20 blur-3xl rounded-full"></div>
+<div class="relative z-10">
+<span class="text-[10px] sm:text-xs font-semibold text-[#0071E3] uppercase tracking-widest mb-2 block">Новый стандарт</span>
+<h2 class="text-xl sm:text-2xl font-bold text-white tracking-tight leading-none">WOW-Agent</h2>
+</div>
+<ul class="space-y-2 sm:space-y-3 relative z-10">
+<li class="flex items-center gap-2 sm:gap-3">
+<div class="bg-[#0071E3]/15 p-1.5 sm:p-2 rounded-lg flex-shrink-0">
+<span class="material-symbols-outlined text-[#0071E3] text-lg sm:text-2xl">psychology</span>
+</div>
+<div>
+<p class="text-base sm:text-lg text-white font-bold leading-tight">Living Logic</p>
+<p class="text-xs sm:text-sm text-gray-400">Понимает контекст и цель</p>
+</div>
+</li>
+<li class="flex items-center gap-2 sm:gap-3">
+<div class="bg-white/5 p-1.5 sm:p-2 rounded-lg flex-shrink-0">
+<span class="material-symbols-outlined text-white text-lg sm:text-2xl">forum</span>
+</div>
+<p class="text-sm sm:text-base text-white/90 font-medium">Свободный диалог без кнопок</p>
+</li>
+<li class="flex items-center gap-2 sm:gap-3">
+<div class="bg-white/5 p-1.5 sm:p-2 rounded-lg flex-shrink-0">
+<span class="material-symbols-outlined text-white text-lg sm:text-2xl">ads_click</span>
+</div>
+<p class="text-sm sm:text-base text-white/90 font-medium">Сам ведёт к следующему шагу</p>
+</li>
+<li class="flex items-center gap-2 sm:gap-3">
+<div class="bg-white/5 p-1.5 sm:p-2 rounded-lg flex-shrink-0">
+<span class="material-symbols-outlined text-white text-lg sm:text-2xl">record_voice_over</span>
+</div>
+<p class="text-sm sm:text-base text-white/90 font-medium">Говорит языком бренда</p>
+</li>
+</ul>
+</div>
+</main>
+
+<footer class="pb-6 sm:pb-8 px-3 sm:px-6 flex justify-center">
+<div class="flex items-center gap-2 bg-white/90 backdrop-blur-md px-3 py-1.5 sm:px-4 sm:py-2 rounded-full border border-gray-200 shadow-sm">
+<div class="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse shadow-md"></div>
+<span class="text-xs sm:text-sm font-bold text-gray-600 uppercase tracking-widest">Next-Gen AI</span>
+</div>
+</footer>
+</div>
+
+<!-- Slide 5: 72 hours -->
+<div class="page bg-white px-4 sm:px-6 py-12 sm:py-16">
+<header class="text-center pt-2 sm:pt-4">
+<p class="text-[#86868b] text-xs sm:text-sm uppercase tracking-widest mb-3 sm:mb-4">Implementation</p>
+<div class="flex flex-col items-center">
+<h1 class="text-5xl sm:text-6xl md:text-7xl font-light leading-none text-black tracking-tight">
+72<span class="text-xl sm:text-2xl ml-2 font-light">часа</span>
+</h1>
+<p class="text-black text-base sm:text-lg font-medium mt-2 tracking-tight">Быстрый запуск без боли</p>
+</div>
+</header>
+
+<section class="relative flex-grow flex flex-col justify-center my-8 sm:my-12 px-2 sm:px-4">
+<div class="absolute left-5 sm:left-8 top-10 bottom-10 w-[0.5px] bg-[#d2d2d7]"></div>
+<div class="space-y-8 sm:space-y-12">
+<div class="relative z-10 flex items-start space-x-4 sm:space-x-6">
+<div class="bg-white py-1 flex-shrink-0">
+<span class="text-4xl sm:text-5xl md:text-6xl font-light leading-tight tracking-tight text-black">1</span>
+</div>
+<div class="pt-2">
+<h3 class="text-base sm:text-lg font-semibold mb-1 text-black">Бриф (30–60 минут)</h3>
+<p class="text-[#86868b] text-sm sm:text-base leading-snug">
+Что продаём / кому / какие вопросы закрываем / какой финальный шаг.
+</p>
+</div>
+</div>
+
+<div class="relative z-10 flex items-start space-x-4 sm:space-x-6">
+<div class="bg-white py-1 flex-shrink-0">
+<span class="text-4xl sm:text-5xl md:text-6xl font-light leading-tight tracking-tight text-black">2</span>
+</div>
+<div class="pt-2">
+<h3 class="text-base sm:text-lg font-semibold mb-1 text-black">Голос бренда + логика</h3>
+<p class="text-[#86868b] text-sm sm:text-base leading-snug">
+Настраиваем стиль общения, структуру диалога и базу знаний по вашим материалам.
+</p>
+</div>
+</div>
+
+<div class="relative z-10 flex items-start space-x-4 sm:space-x-6">
+<div class="bg-white py-1 flex-shrink-0">
+<span class="text-4xl sm:text-5xl md:text-6xl font-light leading-tight tracking-tight text-black">3</span>
+</div>
+<div class="pt-2">
+<h3 class="text-base sm:text-lg font-semibold mb-1 text-black">Точка входа + запуск</h3>
+<p class="text-[#86868b] text-sm sm:text-base leading-snug">
+Встраиваем в сайт/лендинг или делаем отдельный mini-landing / mini-app. Тест → go-live.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<footer class="flex flex-col items-center space-y-3 pt-6 sm:pt-8">
+<div class="bg-[#FF3B30]/5 border border-[#FF3B30]/20 text-[#FF3B30] px-3 py-1.5 sm:px-4 sm:py-2 rounded-full text-xs sm:text-sm uppercase tracking-wider font-semibold text-center">
+ограниченное число запусков в неделю
+</div>
+<div class="flex items-center space-x-3">
+<div class="w-4 h-[0.5px] bg-[#d2d2d7]"></div>
+<p class="text-[#86868b] text-[10px] sm:text-xs uppercase tracking-widest">Confidential • 2026</p>
+<div class="w-4 h-[0.5px] bg-[#d2d2d7]"></div>
+</div>
+</footer>
+</div>
+
+<!-- Slide 6: One Agent, 6 Roles -->
+<div class="page bg-white">
+<div class="flex flex-col h-full px-4 sm:px-6 py-8 sm:py-12">
+<header class="mb-8 sm:mb-12">
+<p class="text-xs sm:text-sm uppercase tracking-widest text-[#86868b] font-bold mb-3 sm:mb-4">Scalability</p>
+<h1 class="text-3xl sm:text-4xl font-bold tracking-tight leading-tight text-black">
+Один агент.<br/>6 ролей.
+</h1>
+<div class="h-1 w-12 bg-black mt-4 sm:mt-5 rounded-full"></div>
+<p class="mt-3 text-xs sm:text-sm text-[#86868b] max-w-full">
+Стартуете с любой роли — и добавляете остальные без перестройки системы.
+</p>
+</header>
+
+<div class="flex-grow flex flex-col justify-between space-y-2 overflow-y-auto">
+<div class="flex items-center py-3 sm:py-4 border-b border-gray-50">
+<div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-gray-50 rounded-xl sm:rounded-2xl mr-3 sm:mr-4 flex-shrink-0">
+<span class="material-symbols-outlined text-2xl sm:text-3xl text-black">ads_click</span>
+</div>
+<div>
+<h2 class="text-base sm:text-lg font-bold tracking-tight text-black">Landing / Mini-Landing</h2>
+<p class="text-xs sm:text-sm text-[#86868b]">Вовлечение → квалификация → заявка</p>
+</div>
+</div>
+
+<div class="flex items-center py-3 sm:py-4 border-b border-gray-50">
+<div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-gray-50 rounded-xl sm:rounded-2xl mr-3 sm:mr-4 flex-shrink-0">
+<span class="material-symbols-outlined text-2xl sm:text-3xl text-black">present_to_all</span>
+</div>
+<div>
+<h2 class="text-base sm:text-lg font-bold tracking-tight text-black">Sales Presentation</h2>
+<p class="text-xs sm:text-sm text-[#86868b]">Презентует оффер и снимает возражения</p>
+</div>
+</div>
+
+<div class="flex items-center py-3 sm:py-4 border-b border-gray-50">
+<div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-gray-50 rounded-xl sm:rounded-2xl mr-3 sm:mr-4 flex-shrink-0">
+<span class="material-symbols-outlined text-2xl sm:text-3xl text-black">mic</span>
+</div>
+<div>
+<h2 class="text-base sm:text-lg font-bold tracking-tight text-black">Webinar Assistant</h2>
+<p class="text-xs sm:text-sm text-[#86868b]">Регистрация → прогрев → Q&A → Zoom</p>
+</div>
+</div>
+
+<div class="flex items-center py-3 sm:py-4 border-b border-gray-50">
+<div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-gray-50 rounded-xl sm:rounded-2xl mr-3 sm:mr-4 flex-shrink-0">
+<span class="material-symbols-outlined text-2xl sm:text-3xl text-black">forum</span>
+</div>
+<div>
+<h2 class="text-base sm:text-lg font-bold tracking-tight text-black">AMA / Q&A 24/7</h2>
+<p class="text-xs sm:text-sm text-[#86868b]">Отвечает по базе знаний всегда</p>
+</div>
+</div>
+
+<div class="flex items-center py-3 sm:py-4 border-b border-gray-50">
+<div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-gray-50 rounded-xl sm:rounded-2xl mr-3 sm:mr-4 flex-shrink-0">
+<span class="material-symbols-outlined text-2xl sm:text-3xl text-black">person_add</span>
+</div>
+<div>
+<h2 class="text-base sm:text-lg font-bold tracking-tight text-black">Onboarding</h2>
+<p class="text-xs sm:text-sm text-[#86868b]">Пошаговый запуск клиента / партнёра</p>
+</div>
+</div>
+
+<div class="flex items-center py-3 sm:py-4">
+<div class="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center bg-gray-50 rounded-xl sm:rounded-2xl mr-3 sm:mr-4 flex-shrink-0">
+<span class="material-symbols-outlined text-2xl sm:text-3xl text-black">support_agent</span>
+</div>
+<div>
+<h2 class="text-base sm:text-lg font-bold tracking-tight text-black">Support & FAQ</h2>
+<p class="text-xs sm:text-sm text-[#86868b]">Снимает нагрузку с команды</p>
+</div>
+</div>
+</div>
+
+<footer class="mt-6 sm:mt-8 flex justify-between items-center text-[10px] sm:text-xs text-[#86868b] font-medium uppercase tracking-widest border-t border-gray-100 pt-4 sm:pt-6">
+<span>Universal Intelligence</span>
+<span>Slide 06</span>
+</footer>
+</div>
+</div>
+
+<!-- Slide 7: Owner Benefits -->
+<div class="page bg-white p-6 sm:p-8">
+<header class="flex justify-between items-center mb-8 sm:mb-12">
+<span class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-black opacity-30">Выгоды</span>
+<span class="text-[10px] sm:text-xs font-medium text-[#86868B] uppercase tracking-widest">Slide 07</span>
+</header>
+
+<main class="flex-1 flex flex-col">
+<div class="mb-8 sm:mb-10">
+<h1 class="text-3xl sm:text-4xl font-bold tracking-tight text-black mb-3 sm:mb-4">
+Что получает владелец
+</h1>
+<p class="text-base sm:text-lg text-[#86868B] font-normal leading-relaxed">
+Сайт и контент начинают работать как человек — и стабильно доводят до шага.
+</p>
+</div>
+
+<div class="flex flex-col flex-1 justify-center space-y-4 sm:space-y-6">
+<div class="py-4 sm:py-6 border-t border-[#F2F2F7]">
+<span class="text-2xl sm:text-3xl font-bold tracking-tight text-black">Больше</span>
+<p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-black mt-1">Диалогов</p>
+<p class="text-xs sm:text-sm text-[#86868B] leading-tight mt-1">Вовлечение вместо «молчаливых визитов».</p>
+</div>
+
+<div class="py-4 sm:py-6 border-t border-[#F2F2F7]">
+<span class="text-2xl sm:text-3xl font-bold tracking-tight text-black">24/7</span>
+<p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-black mt-1">Присутствие</p>
+<p class="text-xs sm:text-sm text-[#86868B] leading-tight mt-1">Ответы даже ночью, в выходные и праздники.</p>
+</div>
+
+<div class="py-4 sm:py-6 border-t border-[#F2F2F7]">
+<span class="text-2xl sm:text-3xl font-bold tracking-tight text-black">Меньше</span>
+<p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-black mt-1">Рутины</p>
+<p class="text-xs sm:text-sm text-[#86868B] leading-tight mt-1">Команда фокусируется на продажах, не на FAQ.</p>
+</div>
+
+<div class="py-4 sm:py-6 border-t border-[#F2F2F7]">
+<span class="text-2xl sm:text-3xl font-bold tracking-tight text-black">Выше</span>
+<p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-black mt-1">Конверсия</p>
+<p class="text-xs sm:text-sm text-[#86868B] leading-tight mt-1">Больше людей доходят до заявки / Zoom / покупки.</p>
+</div>
+
+<div class="py-4 sm:py-6 border-t border-b border-[#F2F2F7]">
+<span class="text-2xl sm:text-3xl font-bold tracking-tight text-black">Скалируемо</span>
+<p class="text-xs sm:text-sm font-bold uppercase tracking-wider text-black mt-1">Без найма</p>
+<p class="text-xs sm:text-sm text-[#86868B] leading-tight mt-1">Рост без расширения штата на первой линии.</p>
+</div>
+</div>
+</main>
+
+<footer class="mt-8 flex justify-between items-center">
+<div class="flex items-center gap-1.5">
+<div class="w-1.5 h-1.5 rounded-full bg-[#007AFF]"></div>
+<span class="text-xs sm:text-sm font-bold tracking-widest uppercase text-black">WOW-Agent</span>
+</div>
+<p class="text-[9px] sm:text-xs text-[#86868B] font-medium uppercase tracking-widest">
+Confidential • 2026
+</p>
+</footer>
+</div>
+
+<!-- Slide 8: Final CTA -->
+<div class="page bg-white px-4 sm:px-6 py-12 sm:py-16">
+<div class="w-full flex flex-col items-center pt-2 sm:pt-4">
+<span class="text-xs sm:text-sm font-semibold tracking-widest text-[#86868b] uppercase mb-8 sm:mb-12">WOW-Agent</span>
+<h1 class="text-center text-3xl sm:text-4xl font-bold tracking-tight leading-tight px-2 text-[#1d1d1f]">
+Начните <br/>с простого
+</h1>
+</div>
+
+<div class="flex-1 flex flex-col items-center justify-center w-full my-6 sm:my-8">
+<div class="flex flex-col items-center gap-6 sm:gap-8">
+<div class="flex flex-col items-center">
+<span class="text-base sm:text-lg font-medium text-[#1d1d1f]">1 агент</span>
+<span class="material-symbols-outlined text-[#86868b] opacity-30 my-1 text-lg">south</span>
+<span class="text-base sm:text-lg font-medium text-[#1d1d1f]">1 цель</span>
+<span class="material-symbols-outlined text-[#86868b] opacity-30 my-1 text-lg">south</span>
+<span class="text-base sm:text-lg font-bold text-[#1d1d1f]">1 точка входа</span>
+<p class="mt-2 sm:mt-3 text-xs sm:text-sm text-[#86868b] text-center max-w-xs sm:max-w-sm">
+Встраиваем в ваш сайт/лендинг или запускаем отдельный mini-landing / mini-app.
+</p>
+</div>
+
+<div class="relative w-40 h-40 sm:w-48 sm:h-48 bg-white border border-gray-200 rounded-2xl sm:rounded-3xl shadow-sm flex items-center justify-center p-3 sm:p-4">
+<div class="w-full h-full rounded-lg opacity-40" style="background-image: radial-gradient(circle, #f0f0f0 1px, transparent 1px); background-size: 8px 8px;"></div>
+<div class="absolute inset-0 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-300 text-4xl sm:text-5xl">qr_code_2</span>
+</div>
+</div>
+
+<p class="text-xs sm:text-sm font-medium text-[#86868b] tracking-tight">Сканируйте — чтобы увидеть демо</p>
+</div>
+</div>
+
+<div class="w-full flex flex-col items-center gap-5 sm:gap-8 pb-3 sm:pb-4">
+<button class="w-full max-w-xs sm:max-w-sm bg-[#1d1d1f] text-white py-4 sm:py-5 px-4 sm:px-6 rounded-full text-base sm:text-lg font-semibold tracking-tight shadow-lg hover:shadow-xl transition-shadow">
+Показать WOW-Agent в действии
+</button>
+
+<footer class="w-full flex flex-col items-center gap-3 sm:gap-4">
+<div class="flex flex-col items-center gap-1">
+<p class="text-[9px] sm:text-xs uppercase tracking-widest font-bold text-gray-400">
+Ограниченное количество слотов
+</p>
+<p class="text-[9px] sm:text-xs text-gray-400 font-medium">
+Быстрые запуски — ограничены по неделе
+</p>
+</div>
+
+<div class="flex items-center gap-3 pt-2 sm:pt-3">
+<div class="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse"></div>
+<span class="text-xs sm:text-sm font-medium text-[#86868b] opacity-60">wow-agent.com</span>
+</div>
+
+<div class="h-2 sm:h-3"></div>
+</footer>
+</div>
+</div>
+
+</body>
+</html>
