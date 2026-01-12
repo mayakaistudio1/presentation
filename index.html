@@ -215,33 +215,47 @@ box-shadow:none;
   font-weight: 600;
   color: #856404;
 }
-</style>
-```
 
-<
+  /* === PDF 9:16 PRINT (one slide = one page) === */
+@page {
+  size: 1080px 1920px; /* 9:16 вертикально */
+  margin: 0;
+}
+
+@media print {
+  html, body {
+    width: 1080px;
+    height: 1920px;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
   
-  /* Visual enhancements - accent & gradient */
-.text-accent {
-  font-weight: 700;
-  color: #0066ff;
+  /* отключаем "карточный режим" при печати */
+  body { scroll-snap-type: none !important; }
+  
+  .page {
+    width: 1080px !important;
+    height: 1920px !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    overflow: hidden !important;
+  }
+  
+  /* чтобы цвета/градиенты печатались */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
 }
-
-.text-gradient {
-  background: linear-gradient(135deg, #0066ff 0%, #00ccff 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  font-weight: 800;
-}
-
-.bg-alert {
-  background-color: #fff3cd;
-  padding: 3px 8px;
-  border-radius: 6px;
-  font-weight: 600;
-  color: #856404;
-}/head>
-<body>
+  </style>
+  </head>
+  <body>
 
 <!-- Slide 1: Intro (NO CTA) -->
 <div class="page bg-[#F2F2F7]">
@@ -784,3 +798,4 @@ Confidential • 2026
 
 </body>
 </html>
+
